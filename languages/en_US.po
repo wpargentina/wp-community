@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Follet Theme\n"
+"Report-Msgid-Bugs-To: http://github.com/andrezrv/follet\n"
+"POT-Creation-Date: 2014-03-30 12:51-0300\n"
+"PO-Revision-Date: 2014-03-30 12:51-0300\n"
+"Last-Translator: Andrés Villarreal <andrezrv@gmail.com>\n"
+"Language-Team: Follet <andrezrv@gmail.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops! That page can&rsquo;t be found."
+
+#: 404.php:23
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+
+#: 404.php:32
+msgid "Most Used Categories"
+msgstr "Most Used Categories"
+
+#: 404.php:49
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Try looking in the monthly archives. %1$s"
+
+#: archive.php:35
+#, php-format
+msgid "Author: %s"
+msgstr "Author: %s"
+
+#: archive.php:38
+#, php-format
+msgid "Day: %s"
+msgstr "Day: %s"
+
+#: archive.php:41
+#, php-format
+msgid "Month: %s"
+msgstr "Month: %s"
+
+#: archive.php:41
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:44
+#, php-format
+msgid "Year: %s"
+msgstr "Year: %s"
+
+#: archive.php:44
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:47
+msgid "Asides"
+msgstr "Asides"
+
+#: archive.php:50
+msgid "Galleries"
+msgstr "Galleries"
+
+#: archive.php:53
+msgid "Images"
+msgstr "Images"
+
+#: archive.php:56
+msgid "Videos"
+msgstr "Videos"
+
+#: archive.php:59
+msgid "Quotes"
+msgstr "Quotes"
+
+#: archive.php:62
+msgid "Links"
+msgstr "Links"
+
+#: archive.php:65
+msgid "Statuses"
+msgstr "Statuses"
+
+#: archive.php:68
+msgid "Audios"
+msgstr "Audios"
+
+#: archive.php:71
+msgid "Chats"
+msgstr "Chats"
+
+#: archive.php:74
+msgid "Archives"
+msgstr "Archives"
+
+#: comments.php:33
+#: comments.php:47
+msgid "Comment navigation"
+msgstr "Comment navigation"
+
+#: comments.php:34
+#: comments.php:48
+msgid "&larr; Older Comments"
+msgstr "&larr; Older Comments"
+
+#: comments.php:35
+#: comments.php:49
+msgid "Newer Comments &rarr;"
+msgstr "Newer Comments &rarr;"
+
+#: comments.php:57
+msgid "Comments are closed."
+msgstr "Comments are closed."
+
+#: comments.php:64
+msgid "Name:"
+msgstr "Name:"
+
+#: comments.php:65
+msgid "Email Address:"
+msgstr "Email Address:"
+
+#: comments.php:66
+msgid "Your Website:"
+msgstr "Your Website:"
+
+#: search.php:22
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Search Results for: %s"

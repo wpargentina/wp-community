@@ -1,0 +1,24 @@
+/**
+ * This stylesheet will manage all color-related styles except primary and
+ * secondary colors.
+ *
+ * @package WP_Community_Theme
+ * @since   1.0
+ */
+
+// Colors by hex code.
+$dark-grey: #777777;
+$medium-grey: #DDDDDD;
+$light-medium-grey: #DEDEDE;
+$light-grey: #EDEDED;
+$white: #FFFFFF;
+$dark: #333333;
+$darker: #222222;
+$black: #000000;
+$medium-opacity: rgba(0, 0, 0, 0.5);
+
+// Colors by function.
+$text-primary: $black;
+$text-secondary: $white;
+$text-general: $text-primary;
+$text-primary-contrast: $dark-grey;

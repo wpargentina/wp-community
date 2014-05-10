@@ -1,63 +1,57 @@
 <?php
 /**
- * @package wp-community
+ * Default file for content visualization.
+ *
+ * @package WP_Community_Theme
+ * @since   1.0
  */
 ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class( follet_post_classes() ); ?> <?php follet_microdata( 'post' ); ?>>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php get_template_part( 'templates/post-thumbnail', '' ); ?>
+
 	<header class="entry-header">
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+
+		<?php if ( follet_get_current( 'post_avatar_show' ) ) : ?>
+			<?php echo get_avatar( get_the_author_meta( 'email' ), '86' ); ?>
+		<?php endif; ?>
+
+		<h1 class="entry-title" <?php follet_microdata( 'entry-title' ); ?>>
+			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+		</h1>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php wp_community_posted_on(); ?>
-		</div><!-- .entry-meta -->
+			<div class="entry-meta">
+				<?php follet_posted_on(); ?>
+			</div>
 		<?php endif; ?>
-	</header><!-- .entry-header -->
 
-	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+	</header>
+
+	<?php // Only display Excerpts for Search and Home, if excerpt exists. ?>
+	<?php if ( ( is_search() or is_home() or is_archive() ) && $post->post_excerpt ) : ?>
+
+		<div class="entry-summary" <?php follet_microdata( 'entry-summary' ); ?>>
+			<?php the_excerpt(); ?>
+			<?php follet_continue_reading( true, true ); ?>
+		</div>
+
+		<?php if ( follet_get_current( 'show_footer_in_summary' ) ) : ?>
+			<?php get_template_part( 'templates/content-footer', '' ); ?>
+		<?php endif; ?>
+
 	<?php else : ?>
-	<div class="entry-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp-community' ) ); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'wp-community' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+
+		<div class="entry-content" <?php follet_microdata( 'entry-content' ); ?>>
+
+			<?php the_content( follet_continue_reading() ); ?>
+
+			<?php follet_link_pages(); // Uses wp_link_pages(). ?>
+
+		</div>
+
+		<?php get_template_part( 'templates/content-footer', '' ); ?>
+
 	<?php endif; ?>
 
-	<footer class="entry-footer">
-		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'wp-community' ) );
-				if ( $categories_list && wp_community_categorized_blog() ) :
-			?>
-			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'wp-community' ), $categories_list ); ?>
-			</span>
-			<?php endif; // End if categories ?>
-
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'wp-community' ) );
-				if ( $tags_list ) :
-			?>
-			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', 'wp-community' ), $tags_list ); ?>
-			</span>
-			<?php endif; // End if $tags_list ?>
-		<?php endif; // End if 'post' == get_post_type() ?>
-
-		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'wp-community' ), __( '1 Comment', 'wp-community' ), __( '% Comments', 'wp-community' ) ); ?></span>
-		<?php endif; ?>
-
-		<?php edit_post_link( __( 'Edit', 'wp-community' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+</article>

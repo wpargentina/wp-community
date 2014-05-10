@@ -1,131 +1,65 @@
 <?php
 /**
- * wp-community functions and definitions
+ * Follet functions and definitions
  *
- * @package wp-community
+ * @package WP_Community_Theme
+ * @since   1.0
  */
 
 /**
- * Set the content width based on the theme's design and stylesheet.
+ * Add a hook for custom actions before loading this file.
  */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
-
-if ( ! function_exists( 'wp_community_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function wp_community_setup() {
-
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on wp-community, use a find and replace
-	 * to change 'wp-community' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'wp-community', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	//add_theme_support( 'post-thumbnails' );
-
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'wp-community' ),
-	) );
-
-	// Enable support for Post Formats.
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
-
-	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'wp_community_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-
-	// Enable support for HTML5 markup.
-	add_theme_support( 'html5', array(
-		'comment-list',
-		'search-form',
-		'comment-form',
-		'gallery',
-		'caption',
-	) );
-}
-endif; // wp_community_setup
-add_action( 'after_setup_theme', 'wp_community_setup' );
+do_action( 'follet_before_functions' );
 
 /**
- * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
+ * Define theme version.
  */
-function wp_community_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'wp-community' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-}
-add_action( 'widgets_init', 'wp_community_widgets_init' );
+define( 'FOLLET_THEME_VERSION', '1.0' );
 
 /**
- * Enqueue scripts and styles.
+ * Set $template_directory to avoid calling get_template_directory() all the time.
  */
-function wp_community_scripts() {
-	wp_enqueue_style( 'wp-community-style', get_stylesheet_uri() );
+$template_directory = get_template_directory();
 
-	wp_enqueue_script( 'wp-community-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+/**
+ * Follet Core framework.
+ */
+require $template_directory . '/includes/follet-core/follet-load.php';
 
-	wp_enqueue_script( 'wp-community-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+/**
+ * Internal functions.
+ */
+require $template_directory . '/includes/internal.php';
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'wp_community_scripts' );
+/**
+ * Custom actions for this theme.
+ */
+require $template_directory . '/includes/custom-setup.php';
 
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom functions for the theme
- */
-require get_template_directory() . '/inc/functions.php';
+require $template_directory . '/includes/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
+require $template_directory . '/includes/custom-template-tags.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require $template_directory . '/includes/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
+ * Execute Follet-related tasks.
  */
-require get_template_directory() . '/inc/jetpack.php';
+do_action( 'follet_setup' );
+
+/**
+ * Add a hook for custom actions after loading this file.
+ */
+do_action( 'follet_after_functions' );
+
+//add_filter( 'follet_option_current_sidebar_right_show', '__return_false' );
+//add_action( 'init', function() { var_dump(follet()); die(); } );

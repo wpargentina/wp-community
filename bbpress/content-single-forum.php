@@ -23,7 +23,10 @@
 
 	<?php else : ?>
 
-		<?php bbp_single_forum_description(); ?>
+		<?php bbp_single_forum_description( array(
+			'before' => '<div class="bbp-template-notice info bg-info"><p class="bbp-forum-description">',
+			'after' => '</p></div>',
+		) ); ?>
 
 		<?php if ( bbp_has_forums() ) : ?>
 

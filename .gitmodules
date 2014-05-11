@@ -1,0 +1,4 @@
+[submodule "includes/follet-core"]
+	path = includes/follet-core
+	url = git@github.com:andrezrv/follet-core.git
+	branch = wp-community-follet-core

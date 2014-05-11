@@ -9,9 +9,9 @@
 
 ?>
 
-<form id="bbp-your-profile" action="<?php bbp_user_profile_edit_url( bbp_get_displayed_user_id() ); ?>" method="post" enctype="multipart/form-data">
+<h2 class="entry-title"><?php _e( 'Edit User', 'wp-community' ); ?></h2>
 
-	<h2 class="entry-title"><?php _e( 'Name', 'bbpress' ) ?></h2>
+<form id="bbp-your-profile" action="<?php bbp_user_profile_edit_url( bbp_get_displayed_user_id() ); ?>" method="post" enctype="multipart/form-data">
 
 	<?php do_action( 'bbp_user_edit_before' ); ?>
 
@@ -46,8 +46,6 @@
 
 	</fieldset>
 
-	<h2 class="entry-title"><?php _e( 'Contact Info', 'bbpress' ) ?></h2>
-
 	<fieldset class="bbp-form">
 		<legend><?php _e( 'Contact Info', 'bbpress' ) ?></legend>
 
@@ -71,8 +69,6 @@
 
 	</fieldset>
 
-	<h2 class="entry-title"><?php bbp_is_user_home_edit() ? _e( 'About Yourself', 'bbpress' ) : _e( 'About the user', 'bbpress' ); ?></h2>
-
 	<fieldset class="bbp-form">
 		<legend><?php bbp_is_user_home_edit() ? _e( 'About Yourself', 'bbpress' ) : _e( 'About the user', 'bbpress' ); ?></legend>
 
@@ -86,8 +82,6 @@
 		<?php do_action( 'bbp_user_edit_after_about' ); ?>
 
 	</fieldset>
-
-	<h2 class="entry-title"><?php _e( 'Account', 'bbpress' ) ?></h2>
 
 	<fieldset class="bbp-form">
 		<legend><?php _e( 'Account', 'bbpress' ) ?></legend>
@@ -122,7 +116,7 @@
 
 		<div id="password">
 			<label for="pass1"><?php _e( 'New Password', 'bbpress' ); ?></label>
-			<fieldset class="bbp-form password">
+			<fieldset class="password">
 				<input type="password" name="pass1" id="pass1" size="16" value="" autocomplete="off" tabindex="<?php bbp_tab_index(); ?>" />
 				<span class="description"><?php _e( 'If you would like to change the password type a new one. Otherwise leave this blank.', 'bbpress' ); ?></span>
 
@@ -139,8 +133,6 @@
 	</fieldset>
 
 	<?php if ( current_user_can( 'edit_users' ) && ! bbp_is_user_home_edit() ) : ?>
-
-		<h2 class="entry-title"><?php _e( 'User Role', 'bbpress' ) ?></h2>
 
 		<fieldset class="bbp-form">
 			<legend><?php _e( 'User Role', 'bbpress' ); ?></legend>
@@ -169,13 +161,13 @@
 
 	<?php do_action( 'bbp_user_edit_after' ); ?>
 
-	<fieldset class="submit">
+	<fieldset class="bbp-form submit">
 		<legend><?php _e( 'Save Changes', 'bbpress' ); ?></legend>
 		<div>
 
 			<?php bbp_edit_user_form_fields(); ?>
 
-			<button type="submit" tabindex="<?php bbp_tab_index(); ?>" id="bbp_user_edit_submit" name="bbp_user_edit_submit" class="button submit user-submit"><?php bbp_is_user_home_edit() ? _e( 'Update Profile', 'bbpress' ) : _e( 'Update User', 'bbpress' ); ?></button>
+			<button type="submit" tabindex="<?php bbp_tab_index(); ?>" id="bbp_user_edit_submit" name="bbp_user_edit_submit" class="button submit user-submit btn btn-secondary"><?php bbp_is_user_home_edit() ? _e( 'Update Profile', 'bbpress' ) : _e( 'Update User', 'bbpress' ); ?></button>
 		</div>
 	</fieldset>
 

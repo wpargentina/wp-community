@@ -15,15 +15,11 @@
 
 	<li class="bbp-header">
 
-		<div class="bbp-reply-author"><?php  _e( 'Author',  'bbpress' ); ?></div><!-- .bbp-reply-author -->
-
 		<div class="bbp-reply-content">
 
 			<?php if ( !bbp_show_lead_topic() ) : ?>
 
-				<?php _e( 'Posts', 'bbpress' ); ?>
-
-				<?php bbp_topic_subscription_link(); ?>
+				<?php bbp_topic_subscription_link( array( 'before' => '' ) ); ?>
 
 				<?php bbp_user_favorites_link(); ?>
 
@@ -54,26 +50,6 @@
 		<?php endif; ?>
 
 	</li><!-- .bbp-body -->
-
-	<li class="bbp-footer">
-
-		<div class="bbp-reply-author"><?php  _e( 'Author',  'bbpress' ); ?></div>
-
-		<div class="bbp-reply-content">
-
-			<?php if ( !bbp_show_lead_topic() ) : ?>
-
-				<?php _e( 'Posts', 'bbpress' ); ?>
-
-			<?php else : ?>
-
-				<?php _e( 'Replies', 'bbpress' ); ?>
-
-			<?php endif; ?>
-
-		</div><!-- .bbp-reply-content -->
-
-	</li><!-- .bbp-footer -->
 
 </ul><!-- #topic-<?php bbp_topic_id(); ?>-replies -->
 

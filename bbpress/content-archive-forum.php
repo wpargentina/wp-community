@@ -11,6 +11,8 @@
 
 <div id="bbpress-forums">
 
+	<?php bbp_breadcrumb(); ?>
+
 	<?php if ( bbp_allow_search() ) : ?>
 
 		<div class="bbp-search-form">
@@ -20,8 +22,6 @@
 		</div>
 
 	<?php endif; ?>
-
-	<?php bbp_breadcrumb(); ?>
 
 	<?php bbp_forum_subscription_link(); ?>
 

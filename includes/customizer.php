@@ -44,12 +44,12 @@ function wp_community_customize_top_navigation( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'top_navigation_tip', array(
-		'default'           => _follet_top_navigation_tip(),
-		'sanitize_callback' => '_follet_top_navigation_tip',
+		'default'           => _wp_community_top_navigation_tip(),
+		'sanitize_callback' => '_wp_community_top_navigation_tip',
 	) );
 
 	$wp_customize->add_control(
-		new wp_community_Plain_Text_Control(
+		new Follet_Plain_Text_Control(
 			$wp_customize,
 			'top_navigation_tip',
 			array(
@@ -275,7 +275,7 @@ function wp_community_customize_colors( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(
-		new wp_community_Plain_Text_Control(
+		new Follet_Plain_Text_Control(
 			$wp_customize,
 			'primary_color_tip',
 			array(
@@ -311,7 +311,7 @@ function wp_community_customize_colors( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(
-		new wp_community_Plain_Text_Control(
+		new Follet_Plain_Text_Control(
 			$wp_customize,
 			'secondary_color_tip',
 			array(
@@ -347,7 +347,7 @@ function wp_community_customize_colors( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(
-		new wp_community_Plain_Text_Control(
+		new Follet_Plain_Text_Control(
 			$wp_customize,
 			'header_background_color_tip',
 			array(

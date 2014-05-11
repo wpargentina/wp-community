@@ -9,12 +9,7 @@
 /**
  * Add a hook for custom actions before loading this file.
  */
-do_action( 'follet_before_functions' );
-
-/**
- * Define theme version.
- */
-define( 'FOLLET_THEME_VERSION', '1.0' );
+do_action( 'wp_community_before_functions' );
 
 /**
  * Set $template_directory to avoid calling get_template_directory() all the time.
@@ -52,14 +47,19 @@ require $template_directory . '/includes/custom-template-tags.php';
 require $template_directory . '/includes/customizer.php';
 
 /**
+ * bbPress exclusive functionality.
+ */
+require $template_directory . '/includes/bbpress.php';
+
+/**
  * Execute Follet-related tasks.
  */
-do_action( 'follet_setup' );
+do_action( 'wp_community_setup' );
 
 /**
  * Add a hook for custom actions after loading this file.
  */
-do_action( 'follet_after_functions' );
+do_action( 'wp_community_after_functions' );
 
 //add_filter( 'follet_option_current_sidebar_right_show', '__return_false' );
 //add_action( 'init', function() { var_dump(follet()); die(); } );

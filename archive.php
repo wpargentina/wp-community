@@ -10,7 +10,7 @@
 ?>
 <?php get_header(); ?>
 
-	<section id="primary" class="content-area <?php follet_content_span(); ?>" <?php follet_microdata( 'content' ); ?>>
+	<section id="primary" class="content-area <?php wp_community_content_span(); ?>" <?php follet_microdata( 'content' ); ?>>
 
 		<main id="main" class="site-main-content" role="main">
 

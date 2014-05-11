@@ -17,11 +17,7 @@
 
 			<footer id="footer" class="main-footer" role="contentinfo" <?php follet_microdata( 'footer' ); ?>>
 
-				<?php if ( follet_get_current( 'back_to_top_show' ) ) : ?>
-					<?php get_template_part( 'templates/back-to-top', get_post_format() );  ?>
-				<?php endif; ?>
-
-				<?php if ( follet_footer_column_span( $return = true ) ) : ?>
+				<?php if ( wp_community_footer_column_span( $return = true ) ) : ?>
 					<?php get_template_part( 'templates/footer-sidebars', get_post_format() ); ?>
 					<hr class="separator" />
 				<?php endif; ?>

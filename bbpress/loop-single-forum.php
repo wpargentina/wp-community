@@ -41,7 +41,7 @@
 
 		<?php do_action( 'bbp_theme_before_forum_sub_forums' ); ?>
 
-		<?php bbp_list_forums(); ?>
+		<?php bbp_list_forums( array( 'separator' => '' ) ); ?>
 
 		<?php do_action( 'bbp_theme_after_forum_sub_forums' ); ?>
 

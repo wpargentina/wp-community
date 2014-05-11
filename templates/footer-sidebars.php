@@ -14,7 +14,7 @@
 			<?php if (     is_active_sidebar( 'sidebar-footer-' . $i )
 			           and follet_get_current( 'sidebar_footer_' . $i . '_show' ) ) : ?>
 
-				<div id="sidebar-footer-<?php echo $i; ?>" class="widget-area <?php follet_footer_column_span(); ?>" role="complementary">
+				<div id="sidebar-footer-<?php echo $i; ?>" class="widget-area <?php wp_community_footer_column_span(); ?>" role="complementary">
 					<?php dynamic_sidebar( 'sidebar-footer-' . $i ); ?>
 				</div>
 

@@ -8,7 +8,7 @@
 ?>
 <?php get_header(); ?>
 
-	<div id="primary" class="content-area <?php follet_content_span(); ?>" <?php follet_microdata( 'content' ); ?>>
+	<div id="primary" class="content-area <?php wp_community_content_span(); ?>" <?php follet_microdata( 'content' ); ?>>
 
 		<main id="main" class="site-main" role="main">
 

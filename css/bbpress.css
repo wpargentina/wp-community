@@ -355,3 +355,81 @@
 #bbp-user-wrapper .bbp-form div {
   padding: 0 15px;
 }
+
+#bbp_reply_edit_reason {
+  margin-bottom: 10px;
+}
+
+.bbp-logged-in {
+  font-size: 14px;
+}
+.bbp-logged-in .submit {
+  float: left;
+  margin-right: 10px;
+}
+.bbp-logged-in .avatar {
+  border-radius: 3px;
+}
+.bbp-logged-in h4 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+.widget_display_replies,
+.widget_display_topics {
+  font-size: 12px;
+  line-height: 20px;
+}
+.widget_display_replies .avatar,
+.widget_display_topics .avatar {
+  border-radius: 2px;
+  margin-top: -1px;
+}
+
+.widget_display_stats {
+  overflow: hidden;
+  padding: 5px;
+}
+.widget_display_stats .separator + dl {
+  margin-top: 10px;
+}
+.widget_display_stats dt {
+  clear: both;
+  float: left;
+  font-weight: normal;
+}
+.widget_display_stats dd {
+  float: right;
+}
+.widget_display_stats dt, .widget_display_stats dd {
+  padding: 10px 15px;
+}
+
+.bbp_widget_login {
+  border: 1px solid #E7E7E7;
+  border-radius: 3px;
+}
+#secondary .bbp_widget_login .widget-title {
+  background-color: #f7f7f7;
+  padding: 10px 15px;
+}
+.bbp_widget_login .bbp-login-form {
+  padding: 10px 15px;
+}
+.bbp_widget_login .bbp-login-form legend {
+  display: none;
+}
+.bbp_widget_login .bbp-login-form label {
+  font-weight: normal;
+}
+.bbp_widget_login .bbp-username,
+.bbp_widget_login .bbp-password {
+  margin-bottom: 10px;
+}
+.bbp_widget_login .bbp-login-links {
+  margin-top: 10px;
+}
+.bbp_widget_login .bbp-login-links a {
+  margin-right: 10px;
+}

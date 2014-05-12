@@ -90,25 +90,8 @@ ol {
 	padding-left: 35px;
 }
 
-input {
-	&[type="text"],
-	&[type="password"] {
-		border-radius: 0;
-	}
-}
-
-select,
-textarea {
-	border-radius: 0;
-}
-
 .table > thead > tr > th {
 	border-width: 1px;
-}
-
-.form-control,
-.input-group-addon {
-	border-radius: 0;
 }
 
 .screen-reader-text {
@@ -582,9 +565,11 @@ ol.comment-list {
    Sidebar and footer
    ========================================================================== */
 
-#primary,
+#primary {
+	padding: 30px 15px 30px 30px;
+}
 #secondary {
-	padding: 30px 30px;
+	padding: 30px 30px 30px 15px;
 }
 
 #secondary,
@@ -645,8 +630,6 @@ ol.comment-list {
 			}
 		}
 		.widget-title {
-			display: inline-block;
-			display: inline-flex; // Use inline-flex if supported - otherwise inline-block will be used.
 			margin: 0;
 			padding: 10px 0;
 			+ .search-form {
@@ -950,6 +933,10 @@ embed[src*="v.wordpress.com"] {
 	#credits, #social-menu {
 		padding: 0;
 		text-align: center;
+	}
+	#primary,
+	#secondary {
+		padding: 30px;
 	}
 }
 

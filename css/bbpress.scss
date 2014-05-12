@@ -365,3 +365,80 @@
 		}
 	}
 }
+
+#bbp_reply_edit_reason {
+	margin-bottom: 10px;
+}
+
+.bbp-logged-in {
+	font-size: 14px;
+	.submit {
+		float: left;
+		margin-right: 10px;
+	}
+	.avatar {
+		border-radius: 3px;
+	}
+	h4 {
+		font-family: 'Roboto Slab', serif;
+		font-size: 16px;
+		margin: 0;
+	}
+}
+
+.widget_display_replies,
+.widget_display_topics {
+	font-size: 12px;
+	line-height: 20px;
+	.avatar {
+		border-radius: 2px;
+		margin-top: -1px;
+	}
+}
+
+.widget_display_stats {
+	overflow: hidden;
+	padding: 5px;
+	.separator + dl {
+		margin-top: 10px;
+	}
+	dt {
+		clear: both;
+		float: left;
+		font-weight: normal;
+	}
+	dd {
+		float: right;
+	}
+	dt, dd {
+		padding: 10px 15px;
+	}
+}
+
+.bbp_widget_login {
+	border: 1px solid #E7E7E7;
+	border-radius: 3px;
+	#secondary & .widget-title {
+		background-color: #f7f7f7;
+		padding: 10px 15px;
+	}
+	.bbp-login-form {
+		padding: 10px 15px;
+		legend {
+			display: none;
+		}
+		label {
+			font-weight: normal;
+		}
+	}
+	.bbp-username,
+	.bbp-password {
+		margin-bottom: 10px;
+	}
+	.bbp-login-links {
+		margin-top: 10px;
+		a {
+			margin-right: 10px;
+		}
+	}
+}

@@ -12,6 +12,7 @@ $light-medium-grey: #E7E7E7;
 $light-grey: #F7F7F7;
 $white: #FFFFFF;
 $dark: #767676;
+$dark-medium: #333333;
 $darker: #222222;
 $black: #000000;
 $medium-opacity: rgba(0, 0, 0, 0.5);
@@ -332,20 +333,19 @@ blockquote {
 	.widget {
 		.widget-title {
 			color: $text-secondary;
-			background-color: $dark;
 			+ .separator {
-				border-top: 2px solid $dark;
+				border-top: 1px solid $dark-medium;
 			}
 		}
 		ul {
 			li {
-				border-bottom: 1px solid $dark;
+				border-bottom: 1px solid $dark-medium;
 			}
 		}
 	}
-	#footer-sidebars + hr {
+	#footer-sidebars + .separator {
 		border: none;
-		border-bottom: 1px solid $dark;
+		border-bottom: 1px solid $dark-medium;
 	}
 	.credits {
 		color: $dark-grey;

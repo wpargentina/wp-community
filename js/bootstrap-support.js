@@ -12,5 +12,6 @@ jQuery( document ).ready( function( $ ) {
 	$( '#subscribe-submit .btn' ).addClass( 'btn-primary' ).addClass( 'btn-sm' );
 	$( 'input[type="text"], input[type="password"], input[type="email"], select, textarea' ).addClass( 'form-control' );
 	$( '#primary select, #secondary select, #footer select' ).addClass( 'form-control' );
+    $( '.user-submit').addClass( 'btn-secondary' );
 
 });

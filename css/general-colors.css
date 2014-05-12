@@ -234,17 +234,16 @@ blockquote {
 }
 #footer .widget .widget-title {
   color: white;
-  background-color: #767676;
 }
 #footer .widget .widget-title + .separator {
-  border-top: 2px solid #767676;
+  border-top: 1px solid #333333;
 }
 #footer .widget ul li {
-  border-bottom: 1px solid #767676;
+  border-bottom: 1px solid #333333;
 }
-#footer #footer-sidebars + hr {
+#footer #footer-sidebars + .separator {
   border: none;
-  border-bottom: 1px solid #767676;
+  border-bottom: 1px solid #333333;
 }
 #footer .credits {
   color: #ababab;

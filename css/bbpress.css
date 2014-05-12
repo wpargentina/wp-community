@@ -406,30 +406,34 @@
   padding: 10px 15px;
 }
 
-.bbp_widget_login {
+body.logged-in #secondary .widget.bbp_widget_login .widget-title + .separator {
+  margin-bottom: 15px;
+}
+
+body:not(.logged-in) .bbp_widget_login {
   border: 1px solid #E7E7E7;
   border-radius: 3px;
 }
-#secondary .bbp_widget_login .widget-title {
+#secondary body:not(.logged-in) .bbp_widget_login .widget-title {
   background-color: #f7f7f7;
   padding: 10px 15px;
 }
-.bbp_widget_login .bbp-login-form {
+body:not(.logged-in) .bbp_widget_login .bbp-login-form {
   padding: 10px 15px;
 }
-.bbp_widget_login .bbp-login-form legend {
+body:not(.logged-in) .bbp_widget_login .bbp-login-form legend {
   display: none;
 }
-.bbp_widget_login .bbp-login-form label {
+body:not(.logged-in) .bbp_widget_login .bbp-login-form label {
   font-weight: normal;
 }
-.bbp_widget_login .bbp-username,
-.bbp_widget_login .bbp-password {
+body:not(.logged-in) .bbp_widget_login .bbp-username,
+body:not(.logged-in) .bbp_widget_login .bbp-password {
   margin-bottom: 10px;
 }
-.bbp_widget_login .bbp-login-links {
+body:not(.logged-in) .bbp_widget_login .bbp-login-links {
   margin-top: 10px;
 }
-.bbp_widget_login .bbp-login-links a {
+body:not(.logged-in) .bbp_widget_login .bbp-login-links a {
   margin-right: 10px;
 }

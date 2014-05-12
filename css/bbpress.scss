@@ -415,7 +415,12 @@
 	}
 }
 
-.bbp_widget_login {
+body.logged-in #secondary .widget.bbp_widget_login {
+	.widget-title + .separator {
+		margin-bottom: 15px;
+	}
+}
+body:not(.logged-in) .bbp_widget_login {
 	border: 1px solid #E7E7E7;
 	border-radius: 3px;
 	#secondary & .widget-title {

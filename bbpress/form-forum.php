@@ -43,7 +43,7 @@
 
 				<?php if ( !bbp_is_forum_edit() && bbp_is_forum_closed() ) : ?>
 
-					<div class="bbp-template-notice">
+					<div class="bbp-template-notice bg-warning">
 						<p><?php _e( 'This forum is closed to new content, however your account still allows you to do so.', 'bbpress' ); ?></p>
 					</div>
 
@@ -51,7 +51,7 @@
 
 				<?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
 
-					<div class="bbp-template-notice">
+					<div class="bbp-template-notice bg-info">
 						<p><?php _e( 'Your account has the ability to post unrestricted HTML content.', 'bbpress' ); ?></p>
 					</div>
 
@@ -157,7 +157,7 @@
 <?php elseif ( bbp_is_forum_closed() ) : ?>
 
 	<div id="no-forum-<?php bbp_forum_id(); ?>" class="bbp-no-forum">
-		<div class="bbp-template-notice">
+		<div class="bbp-template-notice bg-warning">
 			<p><?php printf( __( 'The forum &#8216;%s&#8217; is closed to new content.', 'bbpress' ), bbp_get_forum_title() ); ?></p>
 		</div>
 	</div>
@@ -165,7 +165,7 @@
 <?php else : ?>
 
 	<div id="no-forum-<?php bbp_forum_id(); ?>" class="bbp-no-forum">
-		<div class="bbp-template-notice">
+		<div class="bbp-template-notice bg-warning">
 			<p><?php is_user_logged_in() ? _e( 'You cannot create new forums.', 'bbpress' ) : _e( 'You must be logged in to create new forums.', 'bbpress' ); ?></p>
 		</div>
 	</div>

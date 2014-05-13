@@ -29,12 +29,16 @@
 
 	<div id="new-topic-<?php bbp_topic_id(); ?>" class="bbp-topic-form">
 
+		<div class="current-user">
+			<?php echo get_avatar( get_current_user_id(), 50 ); ?>
+		</div>
+
 		<form id="new-post" name="new-post" method="post" action="<?php the_permalink(); ?>">
 
 			<?php do_action( 'bbp_theme_before_topic_form' ); ?>
 
 			<fieldset class="bbp-form">
-				<legend>
+				<div class="bbp-form-header">
 
 					<?php
 						if ( bbp_is_topic_edit() )
@@ -43,13 +47,13 @@
 							bbp_is_single_forum() ? printf( __( 'Create New Topic in &ldquo;%s&rdquo;', 'bbpress' ), bbp_get_forum_title() ) : _e( 'Create New Topic', 'bbpress' );
 					?>
 
-				</legend>
+				</div>
 
 				<?php do_action( 'bbp_theme_before_topic_form_notices' ); ?>
 
 				<?php if ( !bbp_is_topic_edit() && bbp_is_forum_closed() ) : ?>
 
-					<div class="bbp-template-notice">
+					<div class="bbp-template-notice bg-warning">
 						<p><?php _e( 'This forum is marked as closed to new topics, however your posting capabilities still allow you to do so.', 'bbpress' ); ?></p>
 					</div>
 
@@ -57,7 +61,7 @@
 
 				<?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
 
-					<div class="bbp-template-notice">
+					<div class="bbp-template-notice bg-info">
 						<p><?php _e( 'Your account has the ability to post unrestricted HTML content.', 'bbpress' ); ?></p>
 					</div>
 
@@ -200,7 +204,7 @@
 
 						<?php do_action( 'bbp_theme_before_topic_form_submit_button' ); ?>
 
-						<button type="submit" tabindex="<?php bbp_tab_index(); ?>" id="bbp_topic_submit" name="bbp_topic_submit" class="button submit"><?php _e( 'Submit', 'bbpress' ); ?></button>
+						<button type="submit" tabindex="<?php bbp_tab_index(); ?>" id="bbp_topic_submit" name="bbp_topic_submit" class="button submit btn btn-secondary"><?php _e( 'Submit', 'bbpress' ); ?></button>
 
 						<?php do_action( 'bbp_theme_after_topic_form_submit_button' ); ?>
 
@@ -222,7 +226,7 @@
 <?php elseif ( bbp_is_forum_closed() ) : ?>
 
 	<div id="no-topic-<?php bbp_topic_id(); ?>" class="bbp-no-topic">
-		<div class="bbp-template-notice">
+		<div class="bbp-template-notice bg-info">
 			<p><?php printf( __( 'The forum &#8216;%s&#8217; is closed to new topics and replies.', 'bbpress' ), bbp_get_forum_title() ); ?></p>
 		</div>
 	</div>
@@ -230,7 +234,7 @@
 <?php else : ?>
 
 	<div id="no-topic-<?php bbp_topic_id(); ?>" class="bbp-no-topic">
-		<div class="bbp-template-notice">
+		<div class="bbp-template-notice bg-warning">
 			<p><?php is_user_logged_in() ? _e( 'You cannot create new topics.', 'bbpress' ) : _e( 'You must be logged in to create new topics.', 'bbpress' ); ?></p>
 		</div>
 	</div>

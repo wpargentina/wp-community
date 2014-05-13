@@ -1,62 +1,45 @@
 <?php
 /**
- * @package wp-community
+ * content-single.php
+ *
+ * This file handles content for single posts.
+ *
+ * @package WP_Community_Theme
+ * @since   1.0
  */
 ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php follet_microdata( 'post' ); ?>>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php get_template_part( 'templates/post-thumbnail', get_post_format() ); ?>
+
 	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+
+		<?php if ( follet_get_current( 'post_avatar_show' ) ) : ?>
+			<?php echo get_avatar( get_the_author_meta( 'email' ), '86' ); ?>
+		<?php endif; ?>
+
+		<h1 class="entry-title" <?php follet_microdata( 'entry-title' ); ?>>
+			<?php the_title(); ?>
+		</h1>
 
 		<div class="entry-meta">
-			<?php wp_community_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+			<?php follet_posted_on(); ?>
+		</div>
 
-	<div class="entry-content">
+	</header>
+
+	<div class="entry-content" <?php follet_microdata( 'entry-content' ); ?>>
+
 		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'wp-community' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'wp-community' ) );
+		<?php follet_link_pages(); ?>
 
-			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', 'wp-community' ) );
+	</div>
 
-			if ( ! wp_community_categorized_blog() ) {
-				// This blog only has 1 category so we just need to worry about tags in the meta text
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'wp-community' );
-				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'wp-community' );
-				}
+	<?php if ( follet_get_current( 'post_author_info_show' ) ) : ?>
+		<?php get_template_part( 'templates/author-info', 'single' ); ?>
+	<?php endif; ?>
 
-			} else {
-				// But this blog has loads of categories so we should probably display them here
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'wp-community' );
-				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'wp-community' );
-				}
+	<?php get_template_part( 'templates/content-footer', get_post_format() ); ?>
 
-			} // end check for categories on this blog
-
-			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink()
-			);
-		?>
-
-		<?php edit_post_link( __( 'Edit', 'wp-community' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+</article>

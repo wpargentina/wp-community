@@ -2,31 +2,19 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package wp-community
+ * @package WP_Community_Theme
+ * @since   1.0
  */
 ?>
-	<div id="secondary" class="widget-area" role="complementary">
-		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
-			<aside id="search" class="widget widget_search">
-				<?php get_search_form(); ?>
+	<?php if ( is_active_sidebar( 'sidebar-primary' ) and follet_get_current( 'sidebar_primary_show' ) ) : ?>
+
+		<div id="secondary" class="widget-area col-sm-3">
+
+			<aside id="sidebar-primary" class="sidebar" <?php follet_microdata( 'sidebar' ); ?> role="complementary">
+				<?php dynamic_sidebar( 'sidebar-primary' ); ?>
 			</aside>
 
-			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'wp-community' ); ?></h1>
-				<ul>
-					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-				</ul>
-			</aside>
+		</div>
 
-			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', 'wp-community' ); ?></h1>
-				<ul>
-					<?php wp_register(); ?>
-					<li><?php wp_loginout(); ?></li>
-					<?php wp_meta(); ?>
-				</ul>
-			</aside>
-
-		<?php endif; // end sidebar widget area ?>
-	</div><!-- #secondary -->
+	<?php endif; ?>

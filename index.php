@@ -8,17 +8,19 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package wp-community
+ * @package WP_Community_Theme
+ * @since   1.0
  */
+?>
+<?php get_header(); ?>
 
-get_header(); ?>
+	<div id="primary" class="content-area <?php wp_community_content_span(); ?>" <?php follet_microdata( 'content' ); ?>>
 
-	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php /* Start the Loop */ ?>
+			<?php // Start the Loop. ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php
@@ -31,7 +33,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php wp_community_paging_nav(); ?>
+			<?php get_template_part( 'templates/paging-navigation', get_post_format() ); ?>
 
 		<?php else : ?>
 
@@ -39,8 +41,9 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+
+	</div>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -163,11 +163,24 @@ code {
 	.site-title {
 		a {
 			color: $text-secondary;
+			.landing-page .navbar-default & {
+				color: $text-primary;
+			}
+			.landing-page .navbar-inverse & {
+				color: $text-secondary;
+			}
+			.landing-page &:hover {
+				color: $text-primary-contrast;
+			}
 		}
 	}
 	.site-description {
 		color: $text-secondary;
 	}
+}
+
+.landing-page-header {
+	color: $white;
 }
 
 /* =============================================================================
@@ -235,6 +248,9 @@ blockquote {
 .entry-content {
 	border-bottom: 1px solid $light-medium-grey;
 	border-top: 1px solid $light-medium-grey;
+	.landing-page & {
+		border-top: none;
+	}
 }
 
 .entry-meta {
@@ -392,15 +408,5 @@ blockquote {
 		a {
 			color: $white;
 		}
-	}
-}
-
-/* =============================================================================
-   Support for Sharing (via Jetpack)
-   ========================================================================== */
-.entry-content div.sharedaddy {
-	border-top: 1px solid $light-medium-grey;
-	.sd-sharing, + .sharedaddy {
-		border: none;
 	}
 }

@@ -263,6 +263,16 @@ img {
    Top navigation
    ========================================================================== */
 
+.landing-page-header {
+	padding: 30px;
+	.page-title {
+		margin: 0;
+	}
+	.page-excerpt {
+		padding: 20px 0;
+	}
+}
+
 #top-navigation-wrapper {
 	margin: 0;
 	padding: 10px 0;
@@ -319,6 +329,21 @@ img {
 	h2 {
 		margin: 10px 0;
 	}
+	.landing-page & {
+		float: left;
+		padding: 0;
+		position: relative;
+		width: auto;
+		z-index: 10;
+		.site-title {
+			float: left;
+			font-size: 32px;
+			line-height: normal;
+			margin: 0;
+			overflow: hidden;
+			padding: 0 15px;
+		}
+	}
 }
 
 /* =============================================================================
@@ -361,6 +386,9 @@ img {
 		overflow: hidden;
 		padding-bottom: 25px;
 		padding-top: 25px;
+		.landing-page & {
+			padding-top: 0;
+		}
 		p {
 			&:last-child {
 				margin-bottom: 0;
@@ -868,31 +896,7 @@ embed[src*="v.wordpress.com"] {
 }
 
 /* =============================================================================
-   Support for Sharing (via Jetpack)
-   ========================================================================== */
-.entry-content, .entry-summary {
-	div.sharedaddy {
-		margin: 15px 0 0;
-		.sd-content {
-			float: left;
-		}
-		+ .sharedaddy {
-			margin: 0;
-			.sd-block, &.sd-block {
-				padding: 0;
-			}
-		}
-		.sd-block, &.sd-block {
-			padding: 10px 0 0;
-		}
-		.post-likes-widget {
-			width: 84.30%;
-		}
-	}
-}
-
-/* =============================================================================
-   Support for Suscription (via Jetpack)
+   Support for Subscription (via Jetpack)
    ========================================================================== */
 .widget.jetpack_subscription_widget {
 	form {
@@ -927,16 +931,41 @@ embed[src*="v.wordpress.com"] {
 		&.navbar-fixed-top {
 			body.admin-bar & {
 				margin-top: 46px;
+				z-index: 1;
 			}
 		}
+	}
+}
+
+@media screen and (max-width:768px) {
+	.landing-page-header,
+	#primary,
+	#secondary {
+		padding: 30px 15px;
+	}
+	#primary {
+		min-height: 0 !important;
+	}
+	#secondary {
+		padding-top: 0;
 	}
 	#credits, #social-menu {
 		padding: 0;
 		text-align: center;
 	}
-	#primary,
-	#secondary {
-		padding: 30px;
+	.landing-page .site-branding {
+		.site-title {
+			padding: 0;
+		}
+	}
+	#top-navigation-searchform {
+		.search-field {
+			max-width: none;
+			width: 100%;
+		}
+	}
+	.dropdown-submenu .dropdown-menu {
+		padding: 15px 0 15px 15px;
 	}
 }
 

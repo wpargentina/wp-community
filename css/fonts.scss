@@ -74,6 +74,10 @@ code {
 		font-size: 32px;
 		font-weight: normal;
 		line-height: 28px;
+		.landing-page &.site-title {
+			font-size: 24px;
+			line-height: 42px;
+		}
 		a {
 			&:hover, &:focus, &:active {
 				text-decoration: none;
@@ -94,6 +98,18 @@ code {
 				font-family: 'Roboto Slab', sans-serif;
 			}
 		}
+	}
+}
+
+.landing-page-header {
+	.page-title {
+		font-family: 'Roboto Slab', sans-serif;
+		font-size: 32px;
+		font-weight: normal;
+		line-height: 28px;
+	}
+	.page-excerpt {
+		font-size: 18px;
 	}
 }
 

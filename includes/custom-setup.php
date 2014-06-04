@@ -460,6 +460,20 @@ function wp_community_content_width() {
 }
 add_action( 'after_setup_theme', 'wp_community_content_width' );
 
+if ( ! function_exists( 'wp_community_add_page_excerpt' ) ) :
+add_action( 'init', 'wp_community_add_page_excerpt' );
+/**
+ * Enable post excerpts for pages. This is needed to correctly create pages
+ * based on the Landing Page template.
+ *
+ * @return void
+ * @since  1.0
+ */
+function wp_community_add_page_excerpt() {
+	add_post_type_support( 'page', 'excerpt' );
+}
+endif;
+
 /**
  * Add a hook for custom actions before loading the next file.
  */

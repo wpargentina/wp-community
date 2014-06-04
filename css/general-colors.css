@@ -113,7 +113,20 @@ code {
 .site-branding .site-title a {
   color: white;
 }
+.landing-page .navbar-default .site-branding .site-title a {
+  color: #767676;
+}
+.landing-page .navbar-inverse .site-branding .site-title a {
+  color: white;
+}
+.landing-page .site-branding .site-title a:hover {
+  color: #ababab;
+}
 .site-branding .site-description {
+  color: white;
+}
+
+.landing-page-header {
   color: white;
 }
 
@@ -170,6 +183,9 @@ blockquote {
 .entry-content {
   border-bottom: 1px solid #e7e7e7;
   border-top: 1px solid #e7e7e7;
+}
+.landing-page .entry-content {
+  border-top: none;
 }
 
 .entry-meta section {
@@ -278,14 +294,4 @@ blockquote {
 }
 #footer .widget-grofile.widget h4:not(.widget-title) a {
   color: white;
-}
-
-/* =============================================================================
-   Support for Sharing (via Jetpack)
-   ========================================================================== */
-.entry-content div.sharedaddy {
-  border-top: 1px solid #e7e7e7;
-}
-.entry-content div.sharedaddy .sd-sharing, .entry-content div.sharedaddy + .sharedaddy {
-  border: none;
 }

@@ -415,9 +415,17 @@
 	}
 }
 
+body:not(.logged-in) #secondary .widget.bbp_widget_login {
+	.widget-title {
+		padding-left: 15px;
+	}
+}
+
 body.logged-in #secondary .widget.bbp_widget_login {
-	.widget-title + .separator {
-		margin-bottom: 15px;
+	.widget-title {
+		& + .separator {
+			margin-bottom: 15px;
+		}
 	}
 }
 body:not(.logged-in) .bbp_widget_login {

@@ -122,7 +122,7 @@ if ( ! function_exists( 'wp_community_credits' ) ) :
  * @since  1.0
  */
 function wp_community_credits() {
-	$credits = sprintf( __( 'Copyright %s', 'wp_community' ), '&copy; ' . date( 'Y' ) . ' <a href="' . home_url() . '">' . get_bloginfo( 'name' ) . '</a>. ' ) . sprintf( __( 'Powered by %s', 'wp_community' ), '<a href="http://www.wordpress.org/" class="wp-url">WordPress</a> ' . __( 'and', 'wp_community' ) . ' <a href="http://github.com/wpargentina/wp-community" class="theme-url">WP Community</a>.' );
+	$credits = sprintf( __( 'Copyright %s', 'wp_argentina' ), '&copy; ' . date( 'Y' ) . ' <a href="' . home_url() . '">' . get_bloginfo( 'name' ) . '</a>. ' ) . sprintf( __( 'Powered by %s', 'wp_argentina' ), '<a href="http://www.wordpress.org/" class="wp-url">WordPress</a> ' . __( 'and', 'wp_argentina' ) . ' <a href="http://github.com/wpargentina/wp-community" class="theme-url">WP Community</a>.' );
 	$credits = apply_filters( 'wp_community_footer_credits', $credits );
 	echo $credits;
 }

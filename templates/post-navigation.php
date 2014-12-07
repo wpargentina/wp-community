@@ -11,13 +11,13 @@
 
 		<nav class="navigation post-navigation" role="navigation">
 
-			<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'wp_community' ); ?></h1>
+			<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'wp_argentina' ); ?></h1>
 
 			<div class="nav-links">
 				<?php
 					previous_post_link(
 						'<div class="nav-previous pull-left">%link</div>',
-						_x( '<span class="meta-nav">&larr; %title</span>', 'Previous post link', 'wp_community' )
+						_x( '<span class="meta-nav">&larr; %title</span>', 'Previous post link', 'wp_argentina' )
 					);
 					next_post_link(
 						'<div class="nav-next pull-right">%link</div>',

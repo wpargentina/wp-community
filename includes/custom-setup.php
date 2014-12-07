@@ -93,11 +93,11 @@ if ( ! function_exists( 'wp_community_register_menus' ) ) :
 function wp_community_register_menus() {
 	register_nav_menu(
 		'top-menu',
-		__( 'Top menu', 'wp_community' )
+		__( 'Top menu', 'wp_argentina' )
 	);
 	register_nav_menu(
 		'social-menu',
-		__( 'Social menu', 'wp_community' )
+		__( 'Social menu', 'wp_argentina' )
 	);
 }
 endif;
@@ -127,7 +127,7 @@ if ( ! function_exists( 'wp_community_register_sidebars' ) ) :
 function wp_community_register_sidebars() {
 
 	register_sidebar( array(
-		'name'          => __( 'Primary Sidebar', 'wp_community' ),
+		'name'          => __( 'Primary Sidebar', 'wp_argentina' ),
 		'id'            => 'sidebar-primary',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',

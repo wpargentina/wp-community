@@ -11,13 +11,13 @@
     <?php if ( $GLOBALS['wp_query']->max_num_pages > 1 ) : // Don't print empty markup if there's only one page. ?>
 
 		<nav class="navigation paging-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'wp_community' ); ?></h1>
+			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'wp_argentina' ); ?></h1>
 			<div class="nav-links">
 
 				<?php if ( get_next_posts_link() ) : ?>
 					<div class="nav-previous pull-left">
 						<?php next_posts_link( sprintf(
-							__( '%s Older posts', 'wp_community' ),
+							__( '%s Older posts', 'wp_argentina' ),
 							'<span class="icon icon-previous"></span>'
 						) ); ?>
 					</div>
@@ -26,7 +26,7 @@
 				<?php if ( get_previous_posts_link() ) : ?>
 					<div class="nav-next pull-right">
 						<?php previous_posts_link( sprintf(
-							__( 'Newer posts %s', 'wp_community' ),
+							__( 'Newer posts %s', 'wp_argentina' ),
 							'<span class="icon icon-next"></span>'
 						) ); ?>
 					</div>

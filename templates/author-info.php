@@ -17,7 +17,7 @@
 				<li>
 					<a href="<?php echo $posts_url; ?>">
 						<label class="icon icon-author-archive"></label>&nbsp;
-						<?php _e( 'All posts', 'wp_community' ); ?>
+						<?php _e( 'All posts', 'wp_argentina' ); ?>
 					</a>
 				</li>
 			<?php endif; ?>

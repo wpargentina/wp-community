@@ -10,12 +10,12 @@
 ?>
 	<footer class="entry-meta">
 
-		<?php if (   ( $categories_list = get_the_category_list( __( ', ', 'wp_community' ) ) )
+		<?php if (   ( $categories_list = get_the_category_list( __( ', ', 'wp_argentina' ) ) )
 				  && follet_categorized_blog() ) : ?>
 
 			<section class="cat-links" <?php follet_microdata( 'cat-links' ); ?>>
 				<span class="icon icon-category"></span>&nbsp;
-				<?php printf( __( 'Posted in %1$s', 'wp_community' ), $categories_list ); ?>
+				<?php printf( __( 'Posted in %1$s', 'wp_argentina' ), $categories_list ); ?>
 			</section>
 
 		<?php endif; ?>
@@ -24,7 +24,7 @@
 
 			<section class="tags-links" <?php follet_microdata( 'tag-links' ); ?>>
 				<span class="icon icon-tag"></span>&nbsp;
-				<?php printf( __( 'Tagged %1$s', 'wp_community' ), $tags_list ); ?>
+				<?php printf( __( 'Tagged %1$s', 'wp_argentina' ), $tags_list ); ?>
 			</section>
 
 		<?php endif; ?>
@@ -32,7 +32,7 @@
 		<section class="permalink" <?php follet_microdata( 'permalink' ); ?>>
 			<span class="icon icon-permalink"></span>&nbsp;
 			<a href="<?php the_permalink(); ?>" role="link" <?php follet_microdata( 'url' ); ?>>
-				<?php _e( 'Permalink', 'wp_community' ); ?>
+				<?php _e( 'Permalink', 'wp_argentina' ); ?>
 			</a>
 		</section>
 

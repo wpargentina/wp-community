@@ -39,7 +39,7 @@ function wp_community_customize_top_navigation( $wp_customize ) {
 	$wp_customize->get_section( 'nav' )->priority = 30;
 
 	$wp_customize->add_section( 'top_navigation' , array(
-		'title'    => __( 'Top Navigation', 'wp_community' ),
+		'title'    => __( 'Top Navigation', 'wp_argentina' ),
 		'priority' => 31,
 	) );
 
@@ -71,7 +71,7 @@ function wp_community_customize_top_navigation( $wp_customize ) {
 			$wp_customize,
 			'top_navigation_show',
 			array(
-				'label'    => __( 'Show Top Navigation', 'wp_community' ),
+				'label'    => __( 'Show Top Navigation', 'wp_argentina' ),
 				'section'  => 'top_navigation',
 				'settings' => 'top_navigation_show',
 				'priority' => 20,
@@ -91,7 +91,7 @@ function wp_community_customize_top_navigation( $wp_customize ) {
 			$wp_customize,
 			'top_navigation_fix_top',
 			array(
-				'label'    => __( 'Fix to Top', 'wp_community' ),
+				'label'    => __( 'Fix to Top', 'wp_argentina' ),
 				'section'  => 'top_navigation',
 				'settings' => 'top_navigation_fix_top',
 				'priority' => 30,
@@ -111,7 +111,7 @@ function wp_community_customize_top_navigation( $wp_customize ) {
 			$wp_customize,
 			'top_navigation_searchform_show',
 			array(
-				'label'    => __( 'Show Search Form', 'wp_community' ),
+				'label'    => __( 'Show Search Form', 'wp_argentina' ),
 				'section'  => 'top_navigation',
 				'settings' => 'top_navigation_searchform_show',
 				'priority' => 40,
@@ -131,14 +131,14 @@ function wp_community_customize_top_navigation( $wp_customize ) {
 			$wp_customize,
 			'top_navigation_style',
 			array(
-				'label'    => __( 'Color Scheme', 'wp_community' ),
+				'label'    => __( 'Color Scheme', 'wp_argentina' ),
 				'section'  => 'top_navigation',
 				'settings' => 'top_navigation_style',
 				'priority' => 50,
 				'type'     => 'radio',
 				'choices'  => array(
-					'navbar-default' => __( 'Light', 'wp_community' ),
-					'navbar-inverse' => __( 'Dark', 'wp_community' ),
+					'navbar-default' => __( 'Light', 'wp_argentina' ),
+					'navbar-inverse' => __( 'Dark', 'wp_argentina' ),
 				),
 			)
 		)
@@ -159,7 +159,7 @@ function wp_community_customize_header_logo( $wp_customize ) {
 	if ( follet_get_current( 'header_logo_customize' ) ) {
 
 		$wp_customize->add_section( 'header_logo' , array(
-			'title'    => __( 'Header Logo', 'wp_community' ),
+			'title'    => __( 'Header Logo', 'wp_argentina' ),
 			'priority' => $wp_customize->get_section( 'title_tagline' )->priority + 1,
 		) );
 
@@ -191,7 +191,7 @@ function wp_community_customize_header_logo( $wp_customize ) {
 				$wp_customize,
 				'header_logo_show',
 				array(
-					'label'    => __( 'Show instead of Site Title & Tagline', 'wp_community' ),
+					'label'    => __( 'Show instead of Site Title & Tagline', 'wp_argentina' ),
 					'section'  => 'header_logo',
 					'settings' => 'header_logo_show',
 					'priority' => 30,
@@ -211,7 +211,7 @@ function wp_community_customize_header_logo( $wp_customize ) {
 				$wp_customize,
 				'header_logo_img',
 				array(
-					'label'      => __( 'Header Logo', 'wp_community' ),
+					'label'      => __( 'Header Logo', 'wp_argentina' ),
 					'section'    => 'header_logo',
 					'settings'   => 'header_logo_img',
 					'priority'   => 20,
@@ -246,7 +246,7 @@ add_action( 'customize_register', 'wp_community_customize_title_tagline' );
 function wp_community_customize_colors( $wp_customize ) {
 
 	$wp_customize->get_section( 'colors' )->priority = 60;
-	$wp_customize->get_control( 'background_color' )->label = __( 'Body Background Color', 'wp_community' );
+	$wp_customize->get_control( 'background_color' )->label = __( 'Body Background Color', 'wp_argentina' );
 	$wp_customize->get_control( 'header_textcolor' )->priority = 5;
 	$wp_customize->get_control( 'background_color' )->priority = 12;
 
@@ -261,7 +261,7 @@ function wp_community_customize_colors( $wp_customize ) {
 			$wp_customize,
 			'primary_color',
 			array(
-				'label'    => __( 'Primary Color', 'wp_community' ),
+				'label'    => __( 'Primary Color', 'wp_argentina' ),
 				'section'  => 'colors',
 				'settings' => 'primary_color',
 				'priority' => 1,
@@ -297,7 +297,7 @@ function wp_community_customize_colors( $wp_customize ) {
 			$wp_customize,
 			'secondary_color',
 			array(
-				'label'    => __( 'Secondary Color', 'wp_community' ),
+				'label'    => __( 'Secondary Color', 'wp_argentina' ),
 				'section'  => 'colors',
 				'settings' => 'secondary_color',
 				'priority' => 3,
@@ -333,7 +333,7 @@ function wp_community_customize_colors( $wp_customize ) {
 			$wp_customize,
 			'header_background_color',
 			array(
-				'label'    => __( 'Header Background Color', 'wp_community' ),
+				'label'    => __( 'Header Background Color', 'wp_argentina' ),
 				'section'  => 'colors',
 				'settings' => 'header_background_color',
 				'priority' => 7,
@@ -370,7 +370,7 @@ function wp_community_customize_colors( $wp_customize ) {
 			$wp_customize,
 			'header_background_ignore',
 			array(
-				'label'    => __( 'Ignore Header Background Color', 'wp_community' ),
+				'label'    => __( 'Ignore Header Background Color', 'wp_argentina' ),
 				'section'  => 'colors',
 				'settings' => 'header_background_ignore',
 				'priority' => 9,
@@ -390,7 +390,7 @@ function wp_community_customize_colors( $wp_customize ) {
 			$wp_customize,
 			'primary_sidebar_background_color',
 			array(
-				'label'    => __( 'Primary Sidebar Background Color', 'wp_community' ),
+				'label'    => __( 'Primary Sidebar Background Color', 'wp_argentina' ),
 				'section'  => 'colors',
 				'settings' => 'primary_sidebar_background_color',
 				'priority' => 11,

@@ -2,61 +2,35 @@
 /**
  * Implementation of the Custom Header feature.
  *
- * {@link http://codex.wordpress.org/Custom_Headers}
+ * @link http://codex.wordpress.org/Custom_Headers
  *
- * @package wp_community_Theme
- * @since   1.0
+ * @package   WP_Community
+ * @author    WP Argentina <andres@wpargentina.org>
+ * @license   GPL-2.0+
+ * @link      http://github.com/wpargentina/wp-community
+ * @copyright 2014-2015 WP Argentina
+ * @since     1.0
  */
-
-/**
- * Add a hook for custom actions before loading this file.
- */
-do_action( 'wp_community_before_custom_header' );
-
-if ( ! function_exists( 'wp_community_custom_header_setup' ) ) :
-/**
- * Setup the WordPress core custom header feature.
- *
- * @uses   wp_community_header_style()
- * @uses   wp_community_admin_header_style()
- * @uses   wp_community_admin_header_image()
- * @return void
- * @since  1.0
- */
-function wp_community_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'wp_community_custom_header_args', array(
-		'default-text-color'     => 'FFFFFF',
-		'header-text'            => true,
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
-		'wp-head-callback'       => 'wp_community_header_style',
-		'admin-head-callback'    => 'wp_community_admin_header_style',
-		'admin-preview-callback' => 'wp_community_admin_header_image',
-	) ) );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
-endif;
-add_action( 'after_setup_theme', 'wp_community_custom_header_setup' );
 
 if ( ! function_exists( 'wp_community_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see    wp_community_custom_header_setup()
- * @return void
+ * @see    wp_community_theme_support()
+ *
  * @since  1.0
  */
 function wp_community_header_style() {
+	// Return early if custom header is not supported.
+	if ( ! current_theme_supports( 'custom-header' ) ) {
+		return;
+	}
 
 	$header_text_color = get_header_textcolor();
 
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	/*if ( HEADER_TEXTCOLOR == $header_text_color ) {
-		return;
-	}*/
-
-	// If we get this far, we have custom styles. Let's do this.
 	?>
 	<style type="text/css">
 	<?php if ( get_header_image() ) : ?>
@@ -104,9 +78,9 @@ if ( ! function_exists( 'wp_community_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see    wp_community_custom_header_setup()
- * @return void
- * @since  1.0
+ * @see   wp_community_theme_support()
+ *
+ * @since 1.0
  */
 function wp_community_admin_header_style() {
 	?>
@@ -133,16 +107,16 @@ if ( ! function_exists( 'wp_community_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see wp_community_custom_header_setup()
- * @return void
- * @since  1.0
+ * @see   wp_community_theme_support()
+ *
+ * @since 1.0
  */
 function wp_community_admin_header_image() {
 
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 
 	$color = follet_get_current( 'header_background_ignore' )
-	       ? 'transparent' : follet_get_current( 'header_background_color' );
+		   ? 'transparent' : follet_get_current( 'header_background_color' );
 
 	$image = get_header_image()
 	       ? ' background-image: url(' . get_header_image() . ')' : '';
@@ -181,11 +155,5 @@ function wp_community_admin_header_image() {
 	</header>
 
 	<?php
-
 }
 endif;
-
-/**
- * Add a hook for custom actions before loading the next file.
- */
-do_action( 'wp_community_after_custom_header' );

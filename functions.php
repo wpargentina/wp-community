@@ -1,65 +1,49 @@
 <?php
 /**
- * Follet functions and definitions
+ * Load basic dependencies and bootstrap theme.
  *
- * @package WP_Community_Theme
- * @since   1.0
+ * @package   WP_Community
+ * @author    WP Argentina <andres@wpargentina.org>
+ * @license   GPL-2.0+
+ * @link      http://github.com/wpargentina/wp-community
+ * @copyright 2014-2015 WP Argentina
+ * @since     1.0
  */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ( ! function_exists( 'wp_community_load_follet_core' ) ) :
+add_action( 'wp_community_setup', 'wp_community_load_follet_core' );
+/**
+ * Load Follet Core framework.
+ *
+ * @since 1.0
+ */
+function wp_community_load_follet_core() {
+	require get_template_directory() . '/includes/follet-core/follet-load.php';
+}
+endif;
+
+if ( ! function_exists( 'wp_community_load_dependencies' ) ) :
+add_action( 'wp_community_setup', 'wp_community_load_dependencies' );
+/**
+ * Load theme dependencies.
+ *
+ * @since  1.0
+ */
+function wp_community_load_dependencies() {
+	// Load all files inside `./includes`.
+	follet_load_library( get_template_directory() . '/includes/' );
+}
+endif;
 
 /**
- * Add a hook for custom actions before loading this file.
- */
-do_action( 'wp_community_before_functions' );
-
-/**
- * Set $template_directory to avoid calling get_template_directory() all the time.
- */
-$template_directory = get_template_directory();
-
-/**
- * Follet Core framework.
- */
-require $template_directory . '/includes/follet-core/follet-load.php';
-
-/**
- * Internal functions.
- */
-require $template_directory . '/includes/internal.php';
-
-/**
- * Custom actions for this theme.
- */
-require $template_directory . '/includes/custom-setup.php';
-
-/**
- * Implement the Custom Header feature.
- */
-require $template_directory . '/includes/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require $template_directory . '/includes/custom-template-tags.php';
-
-/**
- * Customizer additions.
- */
-require $template_directory . '/includes/customizer.php';
-
-/**
- * bbPress exclusive functionality.
- */
-require $template_directory . '/includes/bbpress.php';
-
-/**
- * Execute Follet-related tasks.
+ * Execute setup tasks.
  */
 do_action( 'wp_community_setup' );
 
 /**
- * Add a hook for custom actions after loading this file.
+ * Execute tasks after setup.
  */
-do_action( 'wp_community_after_functions' );
-
-//add_filter( 'follet_option_current_sidebar_right_show', '__return_false' );
-//add_action( 'init', function() { var_dump(follet()); die(); } );
+do_action( 'wp_community_after_setup' );

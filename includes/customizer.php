@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! function_exists( 'wp_community_customizer_settings' ) ) :
-add_action( 'follet_customizer_settings', 'wp_community_customizer_settings' );
+add_filter( 'Follet\Module\CustomizerModule\customizer_settings', 'wp_community_customizer_settings' );
 /**
  * Add non-theme-option settings to the list of Customizer settings.
  *
@@ -40,8 +40,6 @@ function wp_community_customizer_settings( $settings ) {
 		 *
 		 * @since 1.0
 		 */
-		'blogname'         => array( 'transport' => 'postMessage' ),
-		'blogdescription'  => array( 'transport' => 'postMessage' ),
 		'header_textcolor' => array( 'transport' => 'postMessage' ),
 
 		/**
@@ -118,7 +116,7 @@ function wp_community_customizer_settings( $settings ) {
 endif;
 
 if ( ! function_exists( 'wp_community_customizer_sections' ) ) :
-add_filter( 'follet_customizer_sections', 'wp_community_customizer_sections', 10, 2 );
+add_filter( 'Follet\Module\CustomizerModule\customizer_sections', 'wp_community_customizer_sections', 10, 2 );
 /**
  * Add sections for Customizer.
  *
@@ -188,7 +186,7 @@ function wp_community_customizer_sections( $sections ) {
 endif;
 
 if ( ! function_exists( 'wp_community_customizer_controls' ) ) :
-add_filter( 'follet_customizer_controls', 'wp_community_customizer_controls', 10, 2 );
+add_filter( 'Follet\Module\CustomizerModule\customizer_controls', 'wp_community_customizer_controls', 10, 2 );
 /**
  * Add or modify non-theme-option controls for Customizer.
  *
@@ -229,7 +227,7 @@ function wp_community_customizer_controls( $controls ) {
 endif;
 
 if ( ! function_exists( 'wp_community_customizer_scripts' ) ) :
-add_filter( 'follet_customizer_scripts', 'wp_community_customizer_scripts' );
+add_filter( 'Follet\Module\CustomizerModule\customizer_scripts', 'wp_community_customizer_scripts' );
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  *

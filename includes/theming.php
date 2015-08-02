@@ -150,7 +150,7 @@ function wp_community_bootstrap_carousel_control( $control ) {
 endif;
 
 if ( ! function_exists( 'wp_community_content_width' ) ) :
-add_action( 'after_setup_theme', 'wp_community_content_width' );
+add_action( 'init', 'wp_community_content_width' );
 /**
  * Set content_width by sidebar availability.
  *
